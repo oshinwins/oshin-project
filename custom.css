@@ -1,0 +1,34 @@
+/* About me section*/
+.container{
+    display:flex;
+    align-items:center;
+    justify-items: center;
+}
+img{
+    max-height:500px;
+}
+.image{
+    flex-basis:70%;
+}
+.text h2{
+    color:black;
+    text-align: center;
+    font-family: 'Playball', cursive;
+}
+.text p{
+    color:black;
+    text-align: justify;
+    font-size: 1.2rem;
+    font-family: 'Playball', cursive;
+}
+.text h3{
+    color:rgb(177, 80, 96);
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Playball', cursive;
+}
+.element {
+    display: inline-block;
+    margin: 10px;
+
+}

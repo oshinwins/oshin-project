@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Here</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--<div class="alert-success">
+        <span>Message sent! Thankyou for contacting me.</span>
+    </div>
+    <div class="alert-error">
+        <span>Something went wrong1Please try again.</span>
+    </div>-->
+    <div class="contact-section">
+        <div class="contact-info">
+            <div><i class="fas fa-map-marker-alt"></i>Address,City,Country</div>
+            <div><i class="fas fa-envelope"></i>contact@email.com</div>
+            <div><i class="fas fa-phone"></i>+00 0000 000 000</div>
+            <div><i class="fas fa-clock"></i>Mon-Fri 8:00 AM to 5:00 PM</div>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Me</h2>
+            <form class="contact" action="javascript:sendmail()" method="post">
+                <input type="text" name="name" class="text-box" placeholder="Your name" required>
+                <input type="email" name="email" class="text-box" placeholder="Your email" required>
+                <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+                <input type="submit" name="submit" class="send-btn" value="Send">
+            </form>
+        </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+
+    function sendmail() {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+
+        var Body = 'Name: ' + name + '<br>Email: ' + email + '<br>Message: '+ message;
+
+
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "honeyramteke5@gmail.com",
+            Password: "Honey@12#76",
+            To: 'honeyramteke5@gmail.com',
+            From: "honeyramteke5@gmail.com",
+            Subject: "Message Received"+name,
+            Body: Body
+    }).then(
+        message => {
+            if (message == 'OK') {
+                alert("Message sent!Thank you for contacting me.");
+            }
+            else {
+                console.error(message);
+                alert('Something went wrong!Try again.')
+            }
+        }
+    );
+}
+</script>
+</body>
+
+</html>
